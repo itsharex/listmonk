@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../messengers/">
+        <link rel="prev" href="../external-integration/">
       
       
-        <link rel="next" href="../i18n/">
+        <link rel="next" href="../apis/apis/">
       
       
       <link rel="icon" href="../images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Archives - listmonk / Documentation</title>
+        <title>User roles and permissions - listmonk / Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#archives" class="md-skip">
+        <a href="#user-roles" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Archives
+              User roles and permissions
             
           </span>
         </div>
@@ -512,19 +512,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../archives/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -534,7 +525,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -588,10 +578,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../roles-and-permissions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    User roles and permissions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -601,6 +610,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      User roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      List roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      API users
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1068,8 +1122,41 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      User roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      List roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      API users
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1085,29 +1172,151 @@
 
 
 
-<h1 id="archives">Archives<a class="headerlink" href="#archives" title="Permanent link">&para;</a></h1>
-<p>A global public archive is maintained on the public web interface. It can be
-enabled under Settings -&gt; Settings -&gt; General -&gt; Enable public mailing list
-archive.</p>
-<p>To make a campaign available in the public archive (provided it has been
-enabled in the settings as described above), enable the option
-'Publish to public archive' under Campaigns -&gt; Create new -&gt; Archive.</p>
-<p>When using template variables that depend on subscriber data (such as any
-template variable referencing <code>.Subscriber</code>), such data must be supplied
-as 'Campaign metadata', which is a JSON object that will be used in place
-of <code>.Subscriber</code> when rendering the archive template and content.</p>
-<p>When individual subscriber tracking is enabled, TrackLink requires that a UUID
-of an existing user is provided as part of the campaign metadata. Any clicks on
-a TrackLink from the archived campaign will be counted towards that subscriber.</p>
-<p>As an example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;UUID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5a837423-a186-5623-9a87-82691cbe3631&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;example@example.com&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reader&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;attribs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><img alt="Archive campaign" src="../images/archived-campaign-metadata.png" /></p>
+  <h1>User roles and permissions</h1>
+
+<p>listmonk supports (&gt;= v4.0.0) creating systems users with granular permissions to various features, including list-specific permissions. Users can login with a username and password, or via an OIDC (OpenID Connect) handshake if an auth provider is connected. Various permissions can be grouped into "user roles", which can be assigned to users. List-specific permissions can be grouped into "list roles".</p>
+<h2 id="user-roles">User roles<a class="headerlink" href="#user-roles" title="Permanent link">&para;</a></h2>
+<p>A user role is a collection of user related permissions. User roles are attached to user accounts. User roles can be managed in <code>Admin -&gt; Users -&gt; User roles</code> The permissions are described below.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lists</td>
+<td>lists:get_all</td>
+<td>Get details of all lists</td>
+</tr>
+<tr>
+<td></td>
+<td>lists:manage_all</td>
+<td>Create, update, and delete all lists</td>
+</tr>
+<tr>
+<td>subscribers</td>
+<td>subscribers:get</td>
+<td>Get individual subscriber details</td>
+</tr>
+<tr>
+<td></td>
+<td>subscribers:get_all</td>
+<td>Get all subscribers and their details</td>
+</tr>
+<tr>
+<td></td>
+<td>subscribers:manage</td>
+<td>Add, update, and delete subscribers</td>
+</tr>
+<tr>
+<td></td>
+<td>subscribers:import</td>
+<td>Import subscribers from external files</td>
+</tr>
+<tr>
+<td></td>
+<td>subscribers:sql_query</td>
+<td>Run SQL queries on subscriber data. <strong>WARNING:</strong> This permission will allow the querying of all lists and subscribers directly from the database with SQL expressions, superceding individual list and subscriber permissions above.</td>
+</tr>
+<tr>
+<td></td>
+<td>tx:send</td>
+<td>Send transactional messages to subscribers</td>
+</tr>
+<tr>
+<td>campaigns</td>
+<td>campaigns:get</td>
+<td>Get campaign details</td>
+</tr>
+<tr>
+<td></td>
+<td>campaigns:get_analytics</td>
+<td>Access campaign performance metrics</td>
+</tr>
+<tr>
+<td></td>
+<td>campaigns:manage</td>
+<td>Create, update, and delete campaigns</td>
+</tr>
+<tr>
+<td>bounces</td>
+<td>bounces:get</td>
+<td>Get email bounce records</td>
+</tr>
+<tr>
+<td></td>
+<td>bounces:manage</td>
+<td>Process and handle bounced emails</td>
+</tr>
+<tr>
+<td></td>
+<td>webhooks:post_bounce</td>
+<td>Receive bounce notifications via webhook</td>
+</tr>
+<tr>
+<td>media</td>
+<td>media:get</td>
+<td>Get uploaded media files</td>
+</tr>
+<tr>
+<td></td>
+<td>media:manage</td>
+<td>Upload, update, and delete media</td>
+</tr>
+<tr>
+<td>templates</td>
+<td>templates:get</td>
+<td>Get email templates</td>
+</tr>
+<tr>
+<td></td>
+<td>templates:manage</td>
+<td>Create, update, and delete templates</td>
+</tr>
+<tr>
+<td>users</td>
+<td>users:get</td>
+<td>Get system user accounts</td>
+</tr>
+<tr>
+<td></td>
+<td>users:manage</td>
+<td>Create, update, and delete user accounts</td>
+</tr>
+<tr>
+<td></td>
+<td>roles:get</td>
+<td>Get user roles and permissions</td>
+</tr>
+<tr>
+<td></td>
+<td>roles:manage</td>
+<td>Create and modify user roles</td>
+</tr>
+<tr>
+<td>settings</td>
+<td>settings:get</td>
+<td>Get system settings</td>
+</tr>
+<tr>
+<td></td>
+<td>settings:manage</td>
+<td>Modify system configuration</td>
+</tr>
+<tr>
+<td></td>
+<td>settings:maintain</td>
+<td>Perform system maintenance tasks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-roles">List roles<a class="headerlink" href="#list-roles" title="Permanent link">&para;</a></h2>
+<p>A list role is a collection of permissions assigned per list. Each list can be assigned a view (read) or manage (update) permission. List roles are attached to user accounts. Only the lists defined in a list role is accessible by the user, be it on the admin UI or via API calls. Do note that the <code>lists:get_all</code> and <code>lists:manage_all</code> permissions in user roles override all per-list permissions.</p>
+<h2 id="api-users">API users<a class="headerlink" href="#api-users" title="Permanent link">&para;</a></h2>
+<p>A user account can be of two types, a regular user or an API user. API users are meant for intertacting with the listmonk APIs programmatically. Unlike regular user accounts that have custom passwords or OIDC for authentication, API users get an automatically generated secret token.</p>
 
 
 
